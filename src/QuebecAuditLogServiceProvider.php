@@ -2,17 +2,17 @@
 
 namespace JeffersonGoncalves\Filament\QuebecAuditLog;
 
+use JeffersonGoncalves\FilamentPluginCore\BasePackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class QuebecAuditLogServiceProvider extends PackageServiceProvider
+class QuebecAuditLogServiceProvider extends BasePackageServiceProvider
 {
+    public static string $name = 'filament-quebec-audit-log';
+
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-quebec-audit-log')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigrations();
+            ->name(static::$name)
+            ->hasTranslations();
     }
 }
